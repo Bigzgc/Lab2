@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+  <constant name="struts.devMode" value="true" />
+	<package name="default" extends="struts-default"> 
+	<action name="index">
+    	<result>/index.jsp</result>
+    </action>
+    <action name="search" class="lab.search" method="find">
+    	<result name="success">/result.jsp</result>
+    </action>
+    <action name="detail" class="lab.detail" method="bookdetail">
+    	<result name="error">/detail.jsp</result>
+    </action>
+    <action name="delete" class="lab.delete" method="deletebook">
+    	<result name="success">/index.jsp</result>
+    </action>
+    <action name="add">
+    	<result name="success">/addbook.jsp</result>
+    </action>
+    <action name="addbook" class="lab.add" method="addbook">
+    	<result name="success">/detail.jsp</result>
+    	<result name="error">/error.jsp</result>
+    </action>
+    <action name="add1">
+    	<result name="success">/addAuther.jsp</result>
+    </action>
+    <action name="insertauthor" class="lab.addauther" method="autheradd">
+    	<result name="success">/index.jsp</result>
+    </action>
+    <action name="change">
+    	<result name="success">/updata.jsp</result>
+    </action>
+    <action name="updata" class="lab.updata" method="changebook">
+    	<result name="success">/detail.jsp</result>
+    	<result name="error">/error.jsp</result>
+    </action>
+    <action name="back">
+    	<result name="success">/index.jsp</result>
+    </action>
+</package>
+</struts>        
